@@ -1,0 +1,128 @@
+site_name: 简记
+site_description: 把学到的东西，留下来的个人笔记站
+site_author: 简记
+# 部署前把这里改成你的真实地址（GitHub Pages 项目页通常是 https://用户名.github.io/仓库名/）：
+# 它决定 sitemap 里的地址，以及 404 页面的链接能否在子路径下正常工作。
+site_url: https://yourname.github.io/notes/
+# 想在右上角显示 GitHub 仓库块（和参考站一样）时，取消下面两行注释：
+# repo_url: https://github.com/yourname/notes
+# repo_name: yourname/notes
+
+theme:
+  name: material
+  custom_dir: overrides
+  language: zh
+  font: false
+  logo: assets/logo.svg
+  favicon: assets/logo.svg
+
+  # 自定义配色方案在 docs/stylesheets/extra.css 里定义
+  palette:
+    - scheme: skyeye
+
+  features:
+    - announce.dismiss
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.top
+    - navigation.footer
+    - navigation.expand
+    - navigation.indexes
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.tabs.link
+    - content.tooltips
+    - content.code.copy
+    - content.code.annotate
+
+nav:
+  - 首页:
+      - index.md
+      - 关于本站: about.md
+
+  - 课程笔记:
+      - 大学物理:
+          - 电磁学: notes/physics/em.md
+          - 量子物理: notes/physics/quantum.md
+          - 光学: notes/physics/optics.md
+      - 电路:
+          - 直流电路: notes/circuit/dc.md
+          - 暂态过程: notes/circuit/transient.md
+      - 信号与系统:
+          - 傅里叶变换: notes/signals/fourier.md
+      - 心理学:
+          - 记忆与学习: notes/psychology/memory.md
+
+  - 编程笔记:
+      - Python:
+          - 虚拟环境: notes/python/venv.md
+      - 前端:
+          - HTML / CSS 速查: notes/frontend/htmlcss.md
+      - LaTeX:
+          - 公式速查: notes/latex/formula.md
+      - 工具:
+          - Git 常用命令: notes/tools/git.md
+
+  - 项目记录:
+      - 本站搭建:
+          - 原站技术栈解析: projects/site-stack.md
+          - 建站与改站记录: projects/build-log.md
+      - 待办与计划: projects/plan.md
+
+  - 杂记:
+      - 阅读摘录: notes/misc/reading.md
+      - 常用链接: notes/misc/links.md
+
+plugins:
+  - search
+
+markdown_extensions:
+  - abbr
+  - attr_list
+  - admonition
+  - def_list
+  - footnotes
+  - md_in_html
+  - meta
+  - pymdownx.caret
+  - pymdownx.betterem
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.snippets
+  - pymdownx.smartsymbols
+  - pymdownx.tilde
+  - pymdownx.arithmatex:
+      generic: true
+  - toc:
+      permalink: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.highlight:
+      anchor_linenums: true
+      linenums: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3.2.2/es5/tex-mml-chtml.js
+
+extra_css:
+  - stylesheets/extra.css
+
+extra:
+  generator: false
+
+copyright: 用 Markdown 写，用 MkDocs 生成 · 内容随时可改

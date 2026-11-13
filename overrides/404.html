@@ -1,0 +1,12 @@
+{% extends "main.html" %}
+
+{% block htmltitle %}
+  <title>404 · 页面不存在 - {{ config.site_name }}</title>
+{% endblock %}
+
+{% block content %}
+  <h1>404</h1>
+  <p>这一页走丢了——可能是链接过期，也可能是这篇笔记还没写。</p>
+  <p><a href="{{ config.site_url }}">← 回到首页</a></p>
+  <p>也可以从左侧的分类目录，或者右上角的搜索重新找找。</p>
+{% endblock %}
